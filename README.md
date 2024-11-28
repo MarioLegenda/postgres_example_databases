@@ -1,5 +1,8 @@
 This is a collection of databases from [this repository](https://github.com/neondatabase-labs/postgres-sample-dbs) already loaded and dockerized.
 
+This project needs an `.env` file to work. If you want, you can just rename the `.env.example` to `.env` and
+add the postgres database password there. 
+
 To build, run:
 
 `docker compose up --build`
@@ -18,7 +21,7 @@ When in postgres:
 
 And it will list all of the loaded databases. 
 
-This repo does not include the postgres_air database or the wikipedia vector database since they are too
+This repo does not include the `postgres_air` database or the `wikipedia vector database` since they are too
 big for Github. But, you can include it after cloning this project. 
 
 For example, to include [postgres_air](https://github.com/hettie-d/postgres_air?tab=readme-ov-file) database,
@@ -30,7 +33,8 @@ add this line in docker-entrypoint-initdb.d/load_databases.sh:
 
 > A BIG NOTE
 > 
-> Loading postgres_air database could take a long time. I have a pretty good laptop and it about 5 minutes to finish
+> Loading postgres_air database could take a long time. I have a pretty good laptop and it 
+> took about 5 minutes to finish.
 
 ````
 psql -v ON_ERROR_STOP=1 --username postgres <<-EOSQL
@@ -75,7 +79,7 @@ psql -U postgres -f /app/titanic.sql
 psql -U postgres -f /app/netflix.sql
 psql -U postgres -f /app/pagila.sql
 psql -U postgres -f /app/lego.sql
-psql -U postgres -f /app/postgres_air.sql
+psql -U postgres -f /app/postgres_air.sql // this waas added
 
 psql -v ON_ERROR_STOP=1 --username postgres <<-EOSQL
     CREATE DATABASE employees;
