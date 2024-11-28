@@ -4,6 +4,20 @@ To build, run:
 
 `docker compose up --build`
 
+Then, go into the container with:
+
+`docker exec -it db sh`
+
+When in container:
+
+`psql -U postgres`
+
+When in postgres:
+
+`\l`
+
+And it will list all of the loaded databases. 
+
 This repo does not include the postgres_air database or the wikipedia vector database since they are too
 big for Github. But, you can include it after cloning this project. 
 
